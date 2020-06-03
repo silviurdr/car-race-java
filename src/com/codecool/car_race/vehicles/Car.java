@@ -20,21 +20,12 @@ public class Car extends Vehicle {
 
     @Override
     public void setName() {
-        giveCarName();
-    }
-
-    @Override
-    public void prepareForLap() {
-    }
-
-    public static String giveCarName() {
-
         String[] firstNames ={"Rusty", "Dusty", "Prusty"};
         String[] lastNames = {"Chubby", "Flobby", "Mobby"};
         Random rand = new Random();
         String firstName = firstNames[rand.nextInt(firstNames.length)];
         String lastName = lastNames[rand.nextInt(firstNames.length)];
-        return firstName + " " + lastName;
+        this.name = firstName + " " + lastName;
     }
 
 

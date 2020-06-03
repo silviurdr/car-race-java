@@ -23,13 +23,5 @@ public class Truck extends Vehicle {
         this.name = String.valueOf(rand.nextInt(1000));
     }
 
-    @Override
-    public void prepareForLap() {
 
-    }
-
-
-    public String getTruckname() {
-        return this.name;
-    }
 }
