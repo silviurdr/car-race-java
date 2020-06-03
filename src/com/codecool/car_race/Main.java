@@ -1,12 +1,21 @@
 package com.codecool.car_race;
 
 
+import com.codecool.car_race.vehicles.Car;
+import com.codecool.car_race.vehicles.Truck;
+
 public class Main {
 
     /**
      * Creates all the vehicles that will be part of this race.
      */
     private static void createVehicles(Race race) {
+
+        Truck truck1 = new Truck();
+        race.registerRacer(truck1);
+        Car car1 = new Car();
+        race.registerRacer(car1);
+
     }
 
     /**
@@ -21,7 +30,9 @@ public class Main {
         Race race = new Race();
         createVehicles(race);
 
+
         race.simulateRace();
         race.printRaceResults();
+
     }
 }
