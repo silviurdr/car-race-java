@@ -6,11 +6,25 @@ public abstract class Vehicle {
 
     protected String vehicleType;
 
+    private int hoursBroken = 0;
+
     protected int normalSpeed;
     private int actualSpeed;
     private int distanceTravel = 0;
 
     private int yellowFlagSpeed = 75;
+
+    public void setHoursBroken(int brokenHours) {
+        hoursBroken = 2;
+    }
+
+    public void decreaseHoursBroken() {
+        hoursBroken--;
+    }
+
+    public int getHoursBroken() {
+        return hoursBroken;
+    }
 
     public int getYellowFlagSpeed() {
         return yellowFlagSpeed;
@@ -26,10 +40,6 @@ public abstract class Vehicle {
 
     public String getName() {
         return name;
-    }
-
-    public int getNormalSpeed() {
-        return normalSpeed;
     }
 
     public abstract void setNormalSpeed();

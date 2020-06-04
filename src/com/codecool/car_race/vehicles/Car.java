@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class Car extends Vehicle {
 
+
+
     public Car() {
         this.setName();
         this.setNormalSpeed();

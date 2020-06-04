@@ -1,7 +1,6 @@
 package com.codecool.car_race.vehicles;
 
 import com.codecool.car_race.Vehicle;
-
 import java.util.Random;
 
 public class Truck extends Vehicle {

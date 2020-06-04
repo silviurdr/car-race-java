@@ -19,11 +19,11 @@ public class Main {
             truck.setVehicleType("Truck");
             race.registerRacer(truck);
             Car car = new Car();
-            race.registerRacer(car);
             car.setVehicleType("Car");
+            race.registerRacer(car);
             Motorcycle motor = new Motorcycle(motorNumber);
-            race.registerRacer(motor);
             motor.setVehicleType("Motor");
+            race.registerRacer(motor);
             motorNumber += 1;
         }
     }
