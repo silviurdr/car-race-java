@@ -9,7 +9,7 @@ public class Race {
     private static boolean isYellowFlag;
     private ArrayList<Vehicle> allRacers=new ArrayList<>();
 
-    private boolean isItRaining() {
+    public static boolean isItRaining() {
         Random rand=new Random();
         int rainingMaybe=rand.nextInt(99);
         if (rainingMaybe < 30) {

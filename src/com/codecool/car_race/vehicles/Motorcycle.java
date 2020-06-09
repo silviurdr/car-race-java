@@ -35,7 +35,7 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public void prepareForLap() {
-        if (Race.getIsYellowFlag()) {
+        if (Race.isItRaining()) {
             this.setActualSpeed(setRainingMotorcycleSpeed());
         } else {
             this.setActualSpeed(normalSpeed);
