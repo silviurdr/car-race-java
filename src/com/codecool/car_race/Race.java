@@ -17,14 +17,13 @@ public class Race {
         } else return false;
     }
 
-    public static void setIsYellowFlag(boolean yellowFlagActive) {
-        isYellowFlag = yellowFlagActive;
-    }
-
     public static boolean getIsYellowFlag() {
         return isYellowFlag;
     }
 
+    public static void setIsYellowFlag(boolean yellowFlagActive) {
+        isYellowFlag=yellowFlagActive;
+    }
 
     public void registerRacer(Vehicle racer) {
         allRacers.add(racer);
@@ -38,10 +37,10 @@ public class Race {
     public void simulateRace() {
 
 
-        int hours = 0;
+        int hours=0;
 
         while (hours < 50) {
-            for (Vehicle racer: allRacers) {
+            for (Vehicle racer : allRacers) {
                 racer.prepareForLap();
             }
             hours++;

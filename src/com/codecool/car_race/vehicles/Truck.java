@@ -14,7 +14,6 @@ public class Truck extends Vehicle {
         this.normalSpeed=100;
     }
 
-
     public void setBrokenSpeed() {
         this.setActualSpeed(0);
     }

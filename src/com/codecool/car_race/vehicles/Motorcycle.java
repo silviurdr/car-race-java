@@ -17,10 +17,9 @@ public class Motorcycle extends Vehicle {
     private int setRainingMotorcycleSpeed() {
         int motorRainyHighSpeed=50;
         int motorRainyLowSpeed=5;
-        int motorRainySpeed = Randomizer.getRandomValue(motorRainyHighSpeed, motorRainyLowSpeed);
+        int motorRainySpeed=Randomizer.getRandomValue(motorRainyHighSpeed, motorRainyLowSpeed);
         return motorRainySpeed;
     }
-
 
     public void setMotorcycleName(int motorNumber) {
         this.name="Motorcycle " + motorNumber;

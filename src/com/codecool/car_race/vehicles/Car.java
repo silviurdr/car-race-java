@@ -1,7 +1,6 @@
 package com.codecool.car_race.vehicles;
 
 import com.codecool.car_race.Vehicle;
-
 import java.util.Random;
 import com.codecool.car_race.Race;
 import com.codecool.car_race.Randomizer;
@@ -14,7 +13,6 @@ public class Car extends Vehicle {
         this.setName();
         this.normalSpeed=setCarSpeed();
     }
-
 
     public int setCarSpeed() {
         int lowCarSpeed=80;
