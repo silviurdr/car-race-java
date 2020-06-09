@@ -1,6 +1,5 @@
 package com.codecool.car_race;
 
-
 import com.codecool.car_race.vehicles.Car;
 import com.codecool.car_race.vehicles.Motorcycle;
 import com.codecool.car_race.vehicles.Truck;
@@ -12,19 +11,16 @@ public class Main {
      */
     private static void createVehicles(Race race) {
 
-        int motorNumber = 1;
+        int motorNumber=1;
 
-        for (int i = 0; i < 10; i++) {
-            Truck truck = new Truck();
-            truck.setVehicleType("Truck");
+        for (int i=0; i < 10; i++) {
+            Truck truck=new Truck();
             race.registerRacer(truck);
-            Car car = new Car();
-            car.setVehicleType("Car");
+            Car car=new Car();
             race.registerRacer(car);
-            Motorcycle motor = new Motorcycle(motorNumber);
-            motor.setVehicleType("Motor");
+            Motorcycle motor=new Motorcycle(motorNumber);
             race.registerRacer(motor);
-            motorNumber += 1;
+            motorNumber+=1;
         }
     }
 
@@ -37,7 +33,7 @@ public class Main {
      *             It is unused.
      */
     public static void main(String[] args) {
-        Race race = new Race();
+        Race race=new Race();
         createVehicles(race);
 
         race.simulateRace();

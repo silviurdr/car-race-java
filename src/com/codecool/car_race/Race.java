@@ -6,7 +6,7 @@ import java.util.Random;
 public class Race {
 
 
-    private int yellowFlagHours = 0;
+    private static boolean isYellowFlag;
     private ArrayList<Vehicle> allRacers=new ArrayList<>();
 
     private boolean isItRaining() {
@@ -17,13 +17,14 @@ public class Race {
         } else return false;
     }
 
-    private boolean didTheTruckBroke() {
-        Random rand=new Random();
-        int maybeBrokenTruck=rand.nextInt(99);
-        if (maybeBrokenTruck < 5) {
-            return true;
-        } else return false;
+    public static void setIsYellowFlag(boolean yellowFlagActive) {
+        isYellowFlag = yellowFlagActive;
     }
+
+    public static boolean getIsYellowFlag() {
+        return isYellowFlag;
+    }
+
 
     public void registerRacer(Vehicle racer) {
         allRacers.add(racer);
@@ -36,49 +37,15 @@ public class Race {
 
     public void simulateRace() {
 
-        Random decreaseMotorcycleSpeed=new Random();
 
         int hours = 0;
 
         while (hours < 50) {
-            boolean lapRain=isItRaining();
-            System.out.println(yellowFlagHours);
-            if (yellowFlagHours > 0) {
-                yellowFlagHours--;
+            for (Vehicle racer: allRacers) {
+                racer.prepareForLap();
             }
-            for (Vehicle racer : allRacers) {
-                if (racer.vehicleType == "Motor") {
-                    if (lapRain) {
-                        racer.prepareForLap(racer.normalSpeed - decreaseMotorcycleSpeed.nextInt(50 - 5) + 5);
-                    } else racer.prepareForLap(racer.normalSpeed);
-                } else if (racer.vehicleType == "Car") {
-                    if (yellowFlagHours == 0) {
-                        racer.prepareForLap(racer.normalSpeed);
-                    } else if (yellowFlagHours > 0) {
-                        racer.prepareForLap(racer.getYellowFlagSpeed());
-                    }
-                } else if (racer.vehicleType == "Truck") {
-                    if (racer.getHoursBroken() == 0) {
-
-                        boolean brokenTruck=didTheTruckBroke();
-                        if (brokenTruck) {
-                            yellowFlagHours=2;
-                            racer.prepareForLap(0);
-                            racer.setHoursBroken(2);
-                            racer.decreaseHoursBroken();
-                        } else {
-                            racer.prepareForLap(racer.normalSpeed);
-                        }
-                    } else {
-                        racer.prepareForLap(0);
-                        racer.decreaseHoursBroken();
-                    }
-                }
-                racer.moveForAnHour();
-            }
-            hours+=1;
+            hours++;
         }
-
     }
 
 
@@ -88,7 +55,7 @@ public class Race {
      */
     public void printRaceResults() {
         for (Vehicle racer : allRacers) {
-            System.out.println(racer.getVehicleType() + " " + racer.getName() + " travelled: " + racer.getDistanceTravel() + "km");
+            System.out.println(" " + racer.getName() + " travelled: " + racer.getDistanceTravel() + "km");
         }
 
     }
