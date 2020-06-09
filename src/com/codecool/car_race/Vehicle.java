@@ -6,7 +6,6 @@ public abstract class Vehicle {
     protected int normalSpeed;
     private int actualSpeed;
     private int distanceTravel=0;
-    private int yellowFlagSpeed=75;
 
     public String getName() {
         return name;
@@ -18,10 +17,6 @@ public abstract class Vehicle {
 
     public void setActualSpeed(int actualSpeed) {
         this.actualSpeed=actualSpeed;
-    }
-
-    public int getYellowFlagSpeed() {
-        return yellowFlagSpeed;
     }
 
     public abstract void setName();
@@ -39,6 +34,4 @@ public abstract class Vehicle {
     public void setDistanceTravel(int lapDistance) {
         this.distanceTravel+=lapDistance;
     }
-
-
 }

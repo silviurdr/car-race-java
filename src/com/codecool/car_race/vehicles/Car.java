@@ -3,13 +3,12 @@ package com.codecool.car_race.vehicles;
 import com.codecool.car_race.Vehicle;
 
 import java.util.Random;
-
-
 import com.codecool.car_race.Race;
 import com.codecool.car_race.Randomizer;
 
 public class Car extends Vehicle {
 
+    private int yellowFlagSpeed=75;
 
     public Car() {
         this.setName();
@@ -37,9 +36,9 @@ public class Car extends Vehicle {
     @Override
     public void prepareForLap() {
         if (Race.getIsYellowFlag()) {
-            this.setActualSpeed(getYellowFlagSpeed());
+            this.setActualSpeed(yellowFlagSpeed);
         } else this.setActualSpeed(normalSpeed);
-        setDistanceTravel(this.getActualSpeed());
+        setDistanceTravel(getActualSpeed());
     }
 
     @Override

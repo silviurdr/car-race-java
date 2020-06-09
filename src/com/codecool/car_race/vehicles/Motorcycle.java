@@ -4,8 +4,6 @@ import com.codecool.car_race.Race;
 import com.codecool.car_race.Vehicle;
 import com.codecool.car_race.Randomizer;
 
-import java.util.Random;
-
 public class Motorcycle extends Vehicle {
 
     private int motorNumber=0;
