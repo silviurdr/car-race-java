@@ -1,6 +1,8 @@
 package com.codecool.car_race;
 
-public abstract class Vehicle {
+import com.codecool.car_race.vehicles.VehicleInterface;
+
+public abstract class Vehicle implements VehicleInterface {
 
     protected String name;
     protected int normalSpeed;
@@ -18,10 +20,6 @@ public abstract class Vehicle {
     public void setActualSpeed(int actualSpeed) {
         this.actualSpeed=actualSpeed;
     }
-
-    public abstract void setName();
-
-    public void prepareForLap(){ };
 
     public void moveForAnHour() {
         distanceTravel+=actualSpeed;

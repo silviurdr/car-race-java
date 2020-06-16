@@ -1,7 +1,5 @@
 package com.codecool.car_race;
 
-import com.codecool.car_race.vehicles.Motorcycle;
-
 import java.util.ArrayList;
 import java.util.Random;
 
