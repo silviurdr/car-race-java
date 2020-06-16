@@ -1,5 +1,4 @@
 package com.codecool.car_race.vehicles;
-
 import com.codecool.car_race.Race;
 import com.codecool.car_race.Vehicle;
 import com.codecool.car_race.Randomizer;
@@ -30,9 +29,8 @@ public class Motorcycle extends Vehicle {
         this.name="Motorcycle " + motorNumber;
     }
 
-    @Override
     public void prepareForLap() {
-        if (Race.isItRaining()) {
+        if (Race.isRaining()) {
             this.setActualSpeed(setRainingMotorcycleSpeed());
         } else {
             this.setActualSpeed(normalSpeed);

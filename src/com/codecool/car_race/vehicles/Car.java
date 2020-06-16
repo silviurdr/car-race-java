@@ -30,6 +30,7 @@ public class Car extends Vehicle {
         String lastName=lastNames[rand.nextInt(firstNames.length)];
         this.name=firstName + " " + lastName;
     }
+    
 
     @Override
     public void prepareForLap() {

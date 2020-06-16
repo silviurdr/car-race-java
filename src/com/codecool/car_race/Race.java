@@ -1,5 +1,7 @@
 package com.codecool.car_race;
 
+import com.codecool.car_race.vehicles.Motorcycle;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,13 +10,23 @@ public class Race {
 
     private static boolean isYellowFlag;
     private ArrayList<Vehicle> allRacers=new ArrayList<>();
+    private static boolean raining = false;
 
-    public static boolean isItRaining() {
+    private static boolean isItRaining() {
         Random rand=new Random();
         int rainingMaybe=rand.nextInt(99);
         if (rainingMaybe < 30) {
             return true;
         } else return false;
+    }
+
+
+    public static boolean isRaining() {
+        return raining;
+    }
+
+    public void setIsRaining(boolean isRaining) {
+        this.raining=isRaining;
     }
 
     public static boolean getIsYellowFlag() {
@@ -40,6 +52,11 @@ public class Race {
         int hours=0;
 
         while (hours < 50) {
+
+            boolean rainStart = isItRaining();
+            if (rainStart) {
+                setIsRaining(true);
+            } else setIsRaining(false);
             for (Vehicle racer : allRacers) {
                 racer.prepareForLap();
             }

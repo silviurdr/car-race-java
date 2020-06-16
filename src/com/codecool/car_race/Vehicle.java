@@ -21,7 +21,7 @@ public abstract class Vehicle {
 
     public abstract void setName();
 
-    public abstract void prepareForLap();
+    public void prepareForLap(){ };
 
     public void moveForAnHour() {
         distanceTravel+=actualSpeed;
